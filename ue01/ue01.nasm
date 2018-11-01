@@ -1,9 +1,9 @@
 global gauss
 
-section .code
+section .text
 
 gauss:
-  MOV rdi, rax    ; a = n
+  MOV rax, rdi    ; a = n
   INC rax         ; a = a + 1
   MUL rdi         ; a = a * n
   MOV rbx, 2      ; b = 2
