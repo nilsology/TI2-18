@@ -1,0 +1,46 @@
+GLOBAL formula
+
+SECTION .text
+
+; rdi = a
+; rsi = b
+; rdx = c
+; rcx = d
+; r8  = e
+; r9  = f
+; r10 = g // pop
+; r11 = h // pop
+
+formula:
+  PUSH rbp
+  POP r10
+  POP r11
+
+  XOR rdx, rdx
+
+  ADD rdi, rsi    ; a + b
+  SUB rdx, rcx    ; b - c
+  MOV rax, rdi    ; rax = (a + b)
+  MUL rdx         ; rax * (b - c)
+  
+  SHL r8, 3
+  SHL r9, 2
+  
+  ADD r8, r9
+  
+  SHR r10, 1
+  SUB r8, r10
+
+  SHR r11, 2
+  ADD r8, r11
+
+  MUL r8
+  MOV r12, 3
+  DIV r8
+
+  POP rbp
+
+  RET
+
+
+
